@@ -10,7 +10,7 @@ public class SingletonConnection {
     private static SingletonConnection instance;
     private Connection connection;
     private String userName = "developer";
-    private String password = "!2Mohamed";
+    private String password = "root";
     private String url = "jdbc:mysql://localhost:3306/Schoolmanagement";
 
 
