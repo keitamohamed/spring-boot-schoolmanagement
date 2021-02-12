@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head th:replace="fragments :: head" th:title="App Head">
+<body>
+<header th:replace="fragments :: header"></header>
+<div class="container_fluid">\
+    <div class="index_container">
+        <h2 class="" th:value="${'javascript:name()'}"></h2>
+        <div class="flex_container">
+            <div th:replace="fragments :: actionForm('register',
+            'fas fa-user-graduate', 'Student Management')"></div>
+
+            <div th:replace="fragments :: actionForm('staff',
+            'fas fa-user-tie', 'Staff Management')"></div>
+
+            <div th:replace="fragments :: actionForm('exam',
+            'fas fa-chalkboard-teacher', 'Exam Management')"></div>
+
+            <div th:replace="fragments :: actionForm('library',
+            'fas fa-book-reader', 'Library Management')"></div>
+
+            <div th:replace="fragments :: actionForm('inventory',
+            'fas fa-boxes', 'Inventory Management')"></div>
+
+            <div th:replace="fragments :: actionForm('event',
+            'far fa-calendar-alt', 'Event Management')"></div>
+        </div>
+    </div>
+</div>
+<footer th:replace="fragments :: footer"></footer>
+<script type="text/javascript" th:src="@{/js/util.js}"></script>
+</body>
+</html>

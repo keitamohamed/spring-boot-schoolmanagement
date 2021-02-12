@@ -1,0 +1,434 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+body {
+  color: #666666;
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+  box-shadow: none;
+  outline: 0;
+}
+
+a {
+  text-decoration: none;
+  background-color: transparent;
+  color: #FFF;
+}
+
+label {
+  font-size: 1.2em;
+  line-height: 19px;
+  font-weight: 60;
+  margin-bottom: 1em;
+}
+
+.form_group {
+  margin-bottom: 1em;
+  text-align: left;
+}
+.form_group input {
+  display: block;
+  width: 100%;
+  padding: 0.375em 0.75em;
+  font-size: 1em;
+  text-align: left;
+}
+
+.inline_check_container {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+.inline_check_container .inline-check-input {
+  margin-right: 1em;
+}
+
+.container_fluid .user_registration_form_context {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 3em 1em;
+}
+.container_fluid .user_registration_form_context .user_context {
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+.container_fluid .user_registration_form_context .form_group input {
+  margin-top: 0.5em !important;
+}
+.container_fluid .user_registration_form_context .form_group_radio {
+  text-align: left;
+}
+.container_fluid .user_registration_form_context .form_group_radio label {
+  margin-top: 0.5em;
+  margin-right: 1em !important;
+}
+.container_fluid .user_registration_form_context .form_group_radio .inline-check-input {
+  margin-top: -0.5em;
+}
+
+.container_fluid {
+  width: 100%;
+  height: 100%;
+}
+.container_fluid .btn {
+  width: 50%;
+  font-size: 1.2em;
+  margin-bottom: 3em;
+  padding: 15px;
+  background: #3C8EBC;
+  color: #FFF;
+}
+.container_fluid .invalid_feedback {
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  margin-top: 0.5em;
+  color: #e2351c;
+}
+.container_fluid .container.login_container {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../image/Login_bg.jpg") no-repeat center !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.container_fluid .container {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
+}
+.container_fluid .container .auth_container {
+  width: 500px;
+  height: 500px;
+  background: #000;
+  color: #FFF;
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  position: absolute;
+  overflow: hidden;
+}
+.container_fluid .container .auth_container::after {
+  content: "";
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 500px;
+}
+.container_fluid .container .auth_container .login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  width: 65%;
+  z-index: 5;
+  -webkit-transition: all 0.3s ease;
+}
+.container_fluid .container .auth_container .login.slide-up {
+  top: 5%;
+  -webkit-transform: translate(-50%, 0%);
+  -webkit-transition: all 0.3s ease;
+}
+.container_fluid .container .auth_container .login.slide-up .form-holder, .container_fluid .container .auth_container .login.slide-up .submit-btn {
+  opacity: 0;
+  visibility: hidden;
+}
+.container_fluid .container .auth_container .login.slide-up .form-title {
+  font-size: 1em;
+  cursor: pointer;
+}
+.container_fluid .container .auth_container .login.slide-up .form-title span {
+  margin-right: 5px;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.3s ease;
+}
+.container_fluid .container .auth_container .login .form-title {
+  color: #fff;
+  font-size: 1.7em;
+  text-align: center;
+}
+.container_fluid .container .auth_container .login .form-title span {
+  color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease;
+}
+.container_fluid .container .auth_container .login .form-holder {
+  border-radius: 15px;
+  background-color: transparent;
+  margin-top: 50px;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.3s ease;
+}
+.container_fluid .container .auth_container .login .form-holder .input {
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  display: block;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  border-radius: 20px;
+  width: 100%;
+  font-size: 17px;
+}
+.container_fluid .container .auth_container .login .form-holder .input:last-child {
+  margin-top: 1em;
+  border-bottom: 0;
+}
+.container_fluid .container .auth_container .login .form-holder .input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+.container_fluid .container .auth_container .login .submit-btn {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: rgba(255, 255, 255, 0.7);
+  border: 0;
+  border-radius: 15px;
+  display: block;
+  margin: 15px auto;
+  padding: 20px 30px;
+  width: 100%;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+.container_fluid .container .auth_container .login .submit-btn:hover {
+  transition: all 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.container_fluid .container .auth_container .signup {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 5;
+  -webkit-transition: all 0.3s ease;
+}
+.container_fluid .container .auth_container .signup::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -20px;
+  -webkit-transform: translate(-50%, 0);
+  background-color: #fff;
+  width: 200%;
+  height: 250px;
+  border-radius: 50%;
+  z-index: 4;
+  -webkit-transition: all 0.3s ease;
+}
+.container_fluid .container .auth_container .signup .center {
+  position: absolute;
+  top: calc(50% - 10%);
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  width: 65%;
+  z-index: 5;
+  -webkit-transition: all 0.3s ease;
+}
+.container_fluid .container .auth_container .signup .center .form-title {
+  color: #000;
+  font-size: 1.7em;
+  text-align: center;
+}
+.container_fluid .container .auth_container .signup .center .form-title span {
+  color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease;
+}
+.container_fluid .container .auth_container .signup .center .form-holder {
+  border-radius: 15px;
+  background-color: #fff;
+  border: 1px solid #eee;
+  overflow: hidden;
+  margin-top: 50px;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.3s ease;
+}
+.container_fluid .container .auth_container .signup .center .form-holder .input {
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  padding: 8px 15px;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+  font-size: 12px;
+}
+.container_fluid .container .auth_container .signup .center .form-holder .input:last-child {
+  border-bottom: 0;
+}
+.container_fluid .container .auth_container .signup .center .form-holder .input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+.container_fluid .container .auth_container .signup .center .submit-btn {
+  background-color: #6B92A4;
+  color: rgba(255, 255, 255, 0.7);
+  border: 0;
+  border-radius: 15px;
+  display: block;
+  margin: 15px auto;
+  padding: 15px 45px;
+  width: 100%;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.3s ease;
+}
+.container_fluid .container .auth_container .signup .center .submit-btn:hover {
+  transition: all 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.container_fluid .container .auth_container .signup.slide-up {
+  top: 90%;
+  -webkit-transition: all 0.3s ease;
+}
+.container_fluid .container .auth_container .signup.slide-up .center {
+  top: 10%;
+  -webkit-transform: translate(-50%, 0%);
+  -webkit-transition: all 0.3s ease;
+}
+.container_fluid .container .auth_container .signup.slide-up .form-holder, .container_fluid .container .auth_container .signup.slide-up .submit-btn {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease;
+}
+.container_fluid .container .auth_container .signup.slide-up .form-title {
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+}
+.container_fluid .container .auth_container .signup.slide-up .form-title span {
+  margin-right: 5px;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.3s ease;
+}
+.container_fluid .index_container {
+  width: 100%;
+  height: 100%;
+}
+.container_fluid .index_container .flex_container {
+  width: 80%;
+  height: 100%;
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 5em auto;
+}
+.container_fluid .index_container .flex_container .management {
+  width: 100%;
+}
+.container_fluid .index_container .flex_container .management .icons_container {
+  width: 100%;
+}
+.container_fluid .index_container .flex_container .management .icons_container .fas:before, .container_fluid .index_container .flex_container .management .icons_container .far:before {
+  font-size: 8em;
+  color: #3C8EBC;
+}
+.container_fluid .index_container .flex_container .management .btn {
+  color: #FFF;
+  margin: 1em;
+  padding: 15px 10px;
+  background: #3C8EBC;
+  font-size: 16px;
+}
+
+.user_info_container {
+  display: flex;
+  gap: 10px 20px;
+  margin-top: 3em;
+}
+.user_info_container .flex_grow, .user_info_container .user_login_info {
+  flex-grow: 1;
+  padding: 0 3em;
+}
+
+.user_login_info {
+  flex-grow: 1;
+  padding: 0 3em;
+  width: 50%;
+  margin-bottom: 3em;
+}
+
+.footer {
+  background: #333;
+  color: #FFF;
+  text-align: left;
+  padding: 3em 0 0;
+}
+.footer .container-fluid {
+  background: #333;
+}
+.footer .footer_context_row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 3em 0 0;
+  text-align: center;
+  place-items: center;
+  place-content: center;
+  padding: 0 15px 15px;
+}
+.footer .footer_context_row .context {
+  flex-grow: 1;
+  text-align: center;
+}
+.footer .footer_context_row .context h3 {
+  margin-bottom: 1em;
+}
+.footer .footer_context_row .context.contact {
+  text-align: left;
+}
+.footer .footer_context_row .context.contact .fas {
+  font-size: 1.3em;
+  margin-right: 1em;
+}
+.footer .footer_context_row .social_media a {
+  margin-right: 1em;
+}
+.footer .footer_context_row .social_media a .fab {
+  font-size: 1.5em;
+}
+.footer .footer_context_copyright {
+  width: 100%;
+  background: #444;
+  margin-top: 2em;
+  padding: 3em 15px;
+}
+
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head th:replace="fragments :: head">
+</head>
+<body>
+
+<div class="container_fluid">
+    <form action="" class="form_register"
+          th:action="@{/process_register}" th:object="${authenticate}" method="POST">
+        <div class="user_info_container">
+<!--            <div class="user_user flex_grow">-->
+
+<!--                <div class="form_group" th:replace="Form :: inputForm('first_name',-->
+<!--                'First name', 'Enter first name', 'firstName')"></div>-->
+
+<!--                <div class="form_group" th:replace="Form :: inputForm('last_name',-->
+<!--                'Last name', 'Enter last name', 'lastName')"></div>-->
+
+<!--                <div class="form_group">-->
+<!--                    <label for="dateOfBirth" class="dateOfBirth">Date of birth</label>-->
+<!--                    <input type="text" class="dateOfBirth"-->
+<!--                           id="dateOfBirth"-->
+<!--                           placeholder="Enter date of birth"-->
+<!--                    >-->
+<!--                </div>-->
+
+<!--                <div class="form_group" th:replace="Form :: radioForm('male_check',-->
+<!--                'Male', 'Male')"></div>-->
+
+<!--                <div class="form_group" th:replace="Form :: radioForm('female_check',-->
+<!--                'Female', 'Female')"></div>-->
+
+<!--            </div>-->
+<!--            <div class="user_address flex_grow">-->
+
+<!--                <div class="form_group" th:replace="Form :: inputForm('street_name',-->
+<!--                'Address', 'Enter address', 'email')"></div>-->
+
+<!--                <div class="form_group" th:replace="Form :: inputForm('city',-->
+<!--                'City', 'Enter city name', 'city')"></div>-->
+
+<!--                <div class="form_group" th:replace="Form :: inputForm('state',-->
+<!--                'State', 'Enter state name', 'state')"></div>-->
+
+<!--                <div class="form_group" th:replace="Form :: numberForm('zipCode',-->
+<!--                'Zip code', 'Enter zip code', 'zipCode')"></div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+        <div class="user_login_info">
+
+            <div class="form_group">
+                <label th:for="${authenticate.username}" th:class="${authenticate.username}" th:text="${'Username name'}"></label>
+                <input type="text" th:name="${authenticate.username}"
+                       th:field="*{username}"
+                       th:placeholder="${'Enter username'}"
+                       th:erroeClass="error_notify"
+                >
+                <div th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="invalid_feedback"></div>
+            </div>
+            <div class="form_group">
+                <label th:for="${authenticate.password}" th:class="${authenticate.password}" th:text="${'UPassword'}"></label>
+                <input type="text" th:name="${authenticate.password}"
+                       th:field="*{password}"
+                       th:placeholder="${'Enter password'}"
+                       th:erroeClass="error_notify"
+                >
+                <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="invalid_feedback"></div>
+            </div>
+
+<!--            <div class="form_group" th:replace="Form :: inputForm('username',-->
+<!--                'Username name', 'Enter username', 'username')"></div>-->
+
+<!--            <div class="form_group" th:replace="Form :: inputForm('password',-->
+<!--                'Password', 'Enter password', ${authenticate})"></div>-->
+
+<!--            <div class="form_group" th:replace="Form :: inputForm('conform_password',-->
+<!--                'Conform Password', 'Conform password', 'cPassword')"></div>-->
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Form</button>
+    </form>
+</div>
+<footer th:replace="fragments :: footer"></footer>
+</body>
+</html>

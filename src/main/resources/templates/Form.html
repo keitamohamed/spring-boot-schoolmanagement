@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:fragment="inputForm(class, labelText, placeholder, username)" class="form_group">
+    <label th:for="${class}" th:class="${class}" th:text="${labelText}"></label>
+    <input type="text" th:class="${class}"
+           th:id="${class}"
+           th:name="${class}"
+           th:field="*{username}"
+           th:placeholder="${placeholder}"
+           th:erroeClass="error_notify"
+    >
+    <div th:if="${#fields.hasErrors(class)}" th:errors="*{username}" class="invalid_feedback"></div>
+</div>
+<div th:fragment="radioForm(id, labelText, value)" class="inline_check_container">
+    <input class="inline-check-input" type="radio"
+           th:name="${id}" th:id="${id}" th:value="${value}"
+    >
+    <label class="inline-check-label" th:for="${id}" th:text="${labelText}"></label>
+</div>
+
+<div th:fragment="numberForm(class, labelText, placeholder, value)" class="form_group">
+    <label th:for="${class}" th:class="${class}" th:text="${labelText}"></label>
+    <input type="number" th:class="${class}"
+           th:id="${class}"
+           th:placeholder="${placeholder}"
+    >
+</div>
+</body>
+</html>
