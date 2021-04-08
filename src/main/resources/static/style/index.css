@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Arvo&family=Cabin&family=Corben&family=Lora&family=Open+Sans&family=Parisienne&family=Roboto:ital,wght@0,100;0,300;1,100&display=swap");
-
 * {
     margin: 0;
     padding: 0;
@@ -65,7 +64,6 @@ label {
     align-items: center;
     position: relative;
 }
-
 .inline_check_container .inline-check-input {
     margin-right: 1em;
 }
@@ -73,12 +71,10 @@ label {
 .form_group_radio {
     text-align: left;
 }
-
 .form_group_radio label {
     margin-top: 0.5em;
     margin-right: 1em !important;
 }
-
 .form_group_radio .inline-check-input {
     margin-top: -0.5em;
 }
@@ -91,7 +87,6 @@ label {
     margin-bottom: 1em;
     text-align: left;
 }
-
 .form_group input {
     display: block;
     width: 100%;
@@ -104,43 +99,35 @@ label {
     color: #000;
     border-bottom: solid 0.2em #bb2205;
 }
-
 .container_fluid .header_container .header_flex {
     display: flex;
     gap: 1em;
     padding: 5px 0 5px;
 }
-
 .container_fluid .header_container .header_flex div {
     width: 100%;
 }
-
 .container_fluid .header_container .header_flex .left_container {
     flex: 0 0 40%;
     padding-left: 3em;
     margin-top: -1em;
 }
-
 .container_fluid .header_container .header_flex .left_container .logo_container {
     width: 130px;
     height: 130px;
 }
-
 .container_fluid .header_container .header_flex .left_container .logo_container .logo {
     width: 150px;
     height: 140px;
 }
-
 .container_fluid .header_container .header_flex .left_container .logo_container .logo img {
     width: 100%;
     height: 100%;
 }
-
 .container_fluid .header_container .header_flex .right_container {
     flex: 0 0 60%;
     padding-top: 2em;
 }
-
 .container_fluid .header_container .header_flex .right_container ul {
     display: flex;
     place-content: center;
@@ -148,25 +135,21 @@ label {
     text-align: center;
     gap: 1em;
 }
-
 .container_fluid .header_container .header_flex .right_container ul .add_slash:after {
     content: "/";
     padding-left: 15px;
     font-size: 1.2em;
     font-weight: 500;
 }
-
 .container_fluid .header_container .header_flex .right_container ul a {
     font-size: 1.2em;
 }
-
 .container_fluid .header_container .header_flex .right_container .custom_dropdown {
     position: relative;
     display: inline-block;
     place-items: center;
     text-align: center;
 }
-
 .container_fluid .header_container .header_flex .right_container .custom_dropdown .dropdown_context {
     font-family: "Lora", "Arvo", "Open Sans", "Parisienne", cursive, sans-serif;
     display: none;
@@ -179,67 +162,54 @@ label {
     padding: 2em 0;
     box-shadow: 1px 2px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.06);
 }
-
 .container_fluid .header_container .header_flex .right_container .custom_dropdown .dropdown_context li {
     margin-bottom: 0.3em;
     width: 100%;
 }
-
 .container_fluid .header_container .header_flex .right_container .custom_dropdown .dropdown_context li a {
     width: 100%;
     padding: 5px 15px;
 }
-
 .container_fluid .header_container .header_flex .right_container .custom_dropdown .dropdown_context li a:hover {
     font-family: "Parisienne", cursive, sans-serif;
     font-size: 1.5em;
 }
-
 .container_fluid .header_container .header_flex .right_container .custom_dropdown:hover .dropdown_context {
     display: block;
 }
-
 .container_fluid .header_container .un_order_show_none {
     display: none;
 }
-
 .container_fluid .header_container .un_order_show {
     display: block;
 }
-
 .container_fluid .user_registration_form_context {
     width: 100%;
     height: 100%;
     text-align: center;
     padding: 3em 1em;
 }
-
 .container_fluid .user_registration_form_context .user_context {
     width: 50%;
     height: 100%;
     text-align: center;
     margin: 0 auto;
 }
-
 .container_fluid .user_registration_form_context .form_group input {
     margin-top: 0.5em !important;
 }
-
 .container_fluid .edit_context {
     width: 100%;
     padding: 15px;
     margin: 2em;
 }
-
 .container_fluid .edit_context form {
     width: 60%;
     margin: 0 auto;
 }
-
 .container_fluid .edit_context form input {
     margin-top: 0.5em;
 }
-
 .container_fluid .edit_context .btn-primary {
     width: 90%;
     background: #00af91;
@@ -259,7 +229,6 @@ label {
     background: #bb2205;
     color: #FFF;
 }
-
 .container_fluid .invalid_feedback {
     font-size: 14px;
     font-weight: 600;
@@ -267,7 +236,6 @@ label {
     margin-top: 0.5em;
     color: #e2351c;
 }
-
 .container_fluid .invalid_login {
     width: 80%;
     margin: 0 auto;
@@ -275,7 +243,6 @@ label {
     color: #E2351C;
     padding: 15px;
 }
-
 .container_fluid .index_container {
     width: 100%;
     height: 100%;
@@ -294,12 +261,10 @@ label {
 .container_fluid .index_container .flex_container .management .icons_container {
   width: 100%;
 }
-
 .container_fluid .index_container .flex_container .management .icons_container .fas:before, .container_fluid .index_container .flex_container .management .icons_container .far:before {
     font-size: 8em;
     color: #3C8EBC;
 }
-
 .container_fluid .index_container .flex_container .management .btn {
     color: #FFF;
     margin: 1em;
@@ -308,56 +273,46 @@ label {
     font-size: 16px;
     width: 100%;
 }
-
 .container_fluid .account_context_container {
     width: 100%;
     padding: 2em;
 }
-
 .container_fluid .account_context_container .container_flex {
     display: flex;
     gap: 1em;
 }
-
 .container_fluid .account_context_container .container_flex .account_context_left, .container_fluid .account_context_container .container_flex .account_context_right {
     text-align: center;
     place-items: center;
 }
-
 .container_fluid .account_context_container .container_flex .account_context_right {
     width: 100%;
 }
-
 .container_fluid .account_context_container .container_flex .account_context_left .account_context_left_top.add_border {
     box-shadow: 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     margin: 0 auto;
     width: 300px;
     padding: 15px 20px;
 }
-
 .container_fluid .account_context_container .container_flex .account_context_left .account_context_left_top.add_border img {
     max-width: 100%;
     border-radius: 50%;
     padding: 15px;
 }
-
 .container_fluid .account_context_container .container_flex .account_context_left .account_context_left_top.add_border .account_context_left_top .form_group {
     border: none !important;
     text-align: center;
 }
-
 .container_fluid .account_context_container .container_flex .account_context_left .account_context_left_top.add_border .account_context_left_top .form_group h5 {
     font-size: 1.3em;
     margin-bottom: 0.5em;
 }
-
 .container_fluid .account_context_container .container_flex .account_context_left .social_media_container {
     width: 300px;
     box-shadow: 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     padding: 15px 20px;
     margin: 2em;
 }
-
 .container_fluid .account_context_container .container_flex .account_context_left .social_media_container .account_context_left_bottom {
     display: flex;
     gap: 1em;
@@ -365,48 +320,39 @@ label {
     text-align: center;
     justify-content: center;
 }
-
 .container_fluid .account_context_container .container_flex .account_context_left .social_media_container .account_context_left_bottom .fab {
     font-size: 2.5em;
     cursor: pointer;
 }
-
 .container_fluid .account_context_container .container_flex .account_context_left .social_media_container .account_context_left_bottom .twitter_fa {
     color: #1DA1F2;
 }
-
 .container_fluid .account_context_container .container_flex .account_context_left .social_media_container .account_context_left_bottom .facebook_fa {
     color: #23689b;
 }
-
 .container_fluid .account_context_container .container_flex .account_context_left .social_media_container .account_context_left_bottom .instagram_fa {
     background: radial-gradient(circle at 35% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
 .container_fluid .account_context_container .container_flex .account_context_left .social_media_container .account_context_left_bottom .snapchat_fa {
     color: #f88f01;
 }
-
 .container_fluid .account_context_container .container_flex .account_context_right form, .container_fluid .account_context_container .container_flex .account_context_bottom form {
     box-shadow: 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     padding: 15px 20px;
 }
-
 .container_fluid .account_context_container .container_flex .account_context_right .form_group, .container_fluid .account_context_container .container_flex .account_context_bottom .form_group {
     display: flex;
     padding: 15px 3em 15px 0;
     border-bottom: 1px solid #edeef7;
 }
-
 .container_fluid .account_context_container .container_flex .account_context_right .form_group h5, .container_fluid .account_context_container .container_flex .account_context_bottom .form_group h5 {
     font-size: 1em;
     font-weight: bold;
     width: 200px;
     text-align: left;
 }
-
 .container_fluid .account_context_container .container_flex .account_context_right .btn_edit, .container_fluid .account_context_container .container_flex .account_context_bottom .btn_edit {
     background: #00af91;
     padding: 8px 15px;
@@ -414,18 +360,15 @@ label {
     width: 80%;
     border-radius: 20px;
 }
-
 .container_fluid .account_context_container .container_flex .account_context_bottom {
     display: flex;
     width: 100%;
     margin-top: 2em;
     gap: 1em;
 }
-
 .container_fluid .account_context_container .container_flex .account_context_bottom .user_account_context {
     flex: 1 1 0;
 }
-
 .container_fluid .account_context_container .container_flex .account_context_bottom .context_user_address {
     flex: 2 1 0;
 }
@@ -435,7 +378,6 @@ label {
     gap: 10px 20px;
     margin-top: 3em;
 }
-
 .user_info_container .flex_grow, .user_info_container .user_login_info {
     flex-grow: 1;
     padding: 0 3em;
@@ -458,11 +400,9 @@ label {
     margin-top: 3em;
     color: #000;
 }
-
 .footer .fas, .footer .fab {
     color: #000;
 }
-
 .footer .footer_context_row {
     display: flex;
     flex-wrap: wrap;
@@ -479,25 +419,20 @@ label {
 .footer .footer_context_row .context h3 {
   margin-bottom: 1em;
 }
-
 .footer .footer_context_row .context.contact .fas {
     font-size: 1.3em;
     margin-right: 1em;
 }
-
 .footer .footer_context_row .context.contact p {
     text-align: center;
     padding-bottom: 0.2em;
 }
-
 .footer .footer_context_row .social_media a {
     margin-right: 1em;
 }
-
 .footer .footer_context_row .social_media a .fab {
     font-size: 1.5em;
 }
-
 .footer .footer_context_copyright {
     width: 100%;
     height: 100px;
@@ -509,22 +444,18 @@ label {
     text-align: center;
     width: 100%;
 }
-
 .container_fluid .form_search .search_container {
     width: 100%;
     text-align: center;
     padding: 50px;
 }
-
 .container_fluid .form_search .search_container input {
     width: 40%;
     padding: 6px 15px !important;
 }
-
 .container_fluid .form_search .search_container input::placeholder {
     font-size: 17px;
 }
-
 .container_fluid .form_search .search_container .btn_search {
     background: #DDD;
     font-size: 17px;
@@ -534,7 +465,6 @@ label {
     margin-left: -5px;
     margin-top: 8px;
 }
-
 .container_fluid .form_search .search_container .btn_search:hover {
     background: #CCC;
 }
