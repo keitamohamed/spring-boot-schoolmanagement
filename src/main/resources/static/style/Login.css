@@ -14,12 +14,10 @@
     place-items: center;
     overflow: hidden;
 }
-
 .container .auth_container {
     margin: 8em auto 2em;
     width: 100%;
 }
-
 .container .auth_container .auth_form {
     width: 50%;
     border-radius: 20px;
@@ -41,21 +39,17 @@
     /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#35394a", endColorstr="#1f222e", GradientType=1);
 }
-
 .container .auth_container .auth_form .login {
     width: 100%;
     margin: 0 auto;
 }
-
 .container .auth_container .auth_form .login .form-height {
     height: 100vh;
 }
-
 .container .auth_container .auth_form .login .form-title {
     margin-bottom: 2em;
     color: #FFF;
 }
-
 .container .auth_container .auth_form .login input {
     color: #FFF !important;
     text-align: left;
@@ -70,17 +64,14 @@
     outline: none;
     background: transparent;
 }
-
 .container .auth_container .auth_form .login input::placeholder {
     color: #FFF !important;
 }
-
 .container .auth_container .auth_form .login .btn_container {
     display: flex;
     padding: 10px 0 10px 6em;
     gap: 2em;
 }
-
 .container .auth_container .auth_form .login .btn_container .submit-btn {
     width: 40%;
     color: #FFF;
@@ -91,23 +82,19 @@
     border-radius: 20px;
     background: transparent;
 }
-
 .container .auth_container .auth_form .login .btn_container .un_order_list {
     display: flex;
     gap: 1em;
 }
-
 .container .auth_container .auth_form .login .btn_container .un_order_list li {
     list-style: none;
     padding-top: 10px;
     color: #FFF;
 }
-
 .container .auth_container .auth_form .login .btn_container .un_order_list li a {
     color: #FFF;
     text-decoration: underline;
 }
-
 .container .auth_container .auth_form .login .btn_container .un_order_list .remove_underline {
     font-size: 1.3em;
 }
