@@ -1,0 +1,115 @@
+.container.login_container {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../image/Login___bg.jpg") no-repeat center !important;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    place-content: center;
+    place-items: center;
+    overflow: hidden;
+}
+
+.container .auth_container {
+    margin: 8em auto 2em;
+    width: 100%;
+}
+
+.container .auth_container .auth_form {
+    width: 50%;
+    border-radius: 20px;
+    margin: 0 auto;
+    padding: 2em 0;
+    background: #35394a;
+    /* Old browsers */
+    background: -moz-linear-gradient(45deg, #35394a 0%, #1f222e 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #35394a), color-stop(100%, #1f222e));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(45deg, #35394a 0%, #1f222e 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(45deg, #35394a 0%, #1f222e 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(45deg, #35394a 0%, #1f222e 100%);
+    /* IE10+ */
+    background: linear-gradient(45deg, #35394a 0%, #1f222e 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#35394a", endColorstr="#1f222e", GradientType=1);
+}
+
+.container .auth_container .auth_form .login {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container .auth_container .auth_form .login .form-height {
+    height: 100vh;
+}
+
+.container .auth_container .auth_form .login .form-title {
+    margin-bottom: 2em;
+    color: #FFF;
+}
+
+.container .auth_container .auth_form .login input {
+    color: #FFF !important;
+    text-align: left;
+    padding: 10px 20px;
+    width: 70%;
+    border-radius: 10px;
+    border: none;
+    border-bottom: solid 1px #FFF;
+    font-size: 1em;
+    margin-bottom: 1em;
+    box-shadow: none;
+    outline: none;
+    background: transparent;
+}
+
+.container .auth_container .auth_form .login input::placeholder {
+    color: #FFF !important;
+}
+
+.container .auth_container .auth_form .login .btn_container {
+    display: flex;
+    padding: 10px 0 10px 6em;
+    gap: 2em;
+}
+
+.container .auth_container .auth_form .login .btn_container .submit-btn {
+    width: 40%;
+    color: #FFF;
+    border: 0.1em solid #e2351c;
+    box-shadow: none;
+    font-size: 1em;
+    padding: 10px 13px;
+    border-radius: 20px;
+    background: transparent;
+}
+
+.container .auth_container .auth_form .login .btn_container .un_order_list {
+    display: flex;
+    gap: 1em;
+}
+
+.container .auth_container .auth_form .login .btn_container .un_order_list li {
+    list-style: none;
+    padding-top: 10px;
+    color: #FFF;
+}
+
+.container .auth_container .auth_form .login .btn_container .un_order_list li a {
+    color: #FFF;
+    text-decoration: underline;
+}
+
+.container .auth_container .auth_form .login .btn_container .un_order_list .remove_underline {
+    font-size: 1.3em;
+}
+
+/*# sourceMappingURL=Login.css.map */

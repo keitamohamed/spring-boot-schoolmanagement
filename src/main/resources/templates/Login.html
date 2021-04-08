@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head th:replace="fragment/fragments :: head('Login')">
+<body>
+<header th:replace="fragment/HeaderNFooter :: header"></header>
+<div class="container_fluid">
+    <div class="container login_container">
+
+        <div class="auth_container">
+            <form th:action="@{/process_login}" th:object="${authenticate}"
+                  class="auth_form" method="POST">
+                <div class="login">
+                    <h2 class="form-title" id="login">Login to your account</h2>
+                    <div class="form-holder">
+                        <input class="input" id="username"
+                               name="username" placeholder="Enter username"
+                               type="text"
+                        />
+                        <input class="input" id="password"
+                               name="password" placeholder="Enter password"
+                               th:field="*{password}"
+                               th:name="${authenticate.password}"
+                               type="password"
+                        />
+                        <div class="invalid_login">
+                            <span th:text="${error}"></span>
+                        </div>
+                    </div>
+
+                    <div class="btn_container">
+                        <button class="submit-btn">Login In</button>
+                        <ul class="un_order_list">
+                            <li><a href="">Forget password?</a></li>
+                            <li class="remove_underline">/</li>
+                            <li><a th:href="@{/user_register}">Register</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+            <!--            <form th:action="@{/user_register}" class="auth_form custom">-->
+            <!--                <div class="signup slide-up">-->
+            <!--                    <div class="center">-->
+            <!--                        <button class="submit-btn">Register</button>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </form>-->
+        </div>
+    </div>
+</div>
+<script th:src="@{/js/index.js}"></script>
+<!--<footer th:replace="fragment/fragments :: footer">-->
+<!--</footer>-->
+</body>
+</html>

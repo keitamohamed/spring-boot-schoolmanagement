@@ -1,0 +1,35 @@
+ol, ul {
+    list-style: none;
+}
+
+blockquote a {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+
+.container_fluid .form_group .custom_label {
+    width: 100%;
+    font-size: 1.2em;
+}
+
+.container_fluid .form_group select {
+    margin-top: 0.5em;
+    width: 100%;
+    font-size: 1em;
+    padding: 5px 15px;
+    border-radius: 10px;
+}
+
+/*# sourceMappingURL=dropdown_select.css.map */

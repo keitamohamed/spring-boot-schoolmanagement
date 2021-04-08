@@ -8,9 +8,9 @@ public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long userAID;
+    private Long addressID;
 
-    private String address;
+    private String street;
     private String city;
     private String state;
     private int zipCode;
@@ -20,20 +20,20 @@ public class Address {
     private User user;
 
 
-    public Long getUserAID() {
-        return userAID;
+    public Long getAddressID() {
+        return addressID;
     }
 
-    public void setUserAID(Long userAID) {
-        this.userAID = userAID;
+    public void setAddressID(Long userAID) {
+        this.addressID = userAID;
     }
 
-    public String getAddress() {
-        return address;
+    public String getStreet() {
+        return street;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setStreet(String address) {
+        this.street = address;
     }
 
     public String getCity() {

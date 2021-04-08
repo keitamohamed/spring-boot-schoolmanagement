@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<body>
+<form class="container_user"
+      method="POST"
+      th:action="${action_url}"
+      th:fragment="userForm(button_text)"
+      th:object="${user}">
+    <div class="user_context fix_radio_button">
+        <div class="form_group">
+            <label th:class="${userID}" th:for="${userID}" th:text="${'User ID'}"></label>
+            <input th:erroeClass="error_notify" th:field="*{userID}"
+                   th:name="${userID}"
+                   th:placeholder="${'Enter last name'}"
+                   th:readonly="'readonly'"
+                   type="text"
+            >
+            <div class="invalid_feedback" th:errors="*{userID}" th:if="${#fields.hasErrors('userID')}"></div>
+        </div>
+        <div class="form_group">
+            <label th:class="${firstName}" th:for="${firstName}" th:text="${'First name'}"></label>
+            <input th:erroeClass="error_notify" th:field="*{firstName}"
+                   th:name="${firstName}"
+                   th:placeholder="${'Enter first name'}"
+                   type="text"
+            >
+            <div class="invalid_feedback" th:errors="*{firstName}" th:if="${#fields.hasErrors('firstName')}"></div>
+        </div>
+        <div class="form_group">
+            <label th:class="${lastName}" th:for="${lastName}" th:text="${'Last name'}"></label>
+            <input th:erroeClass="error_notify" th:field="*{lastName}"
+                   th:name="${lastName}"
+                   th:placeholder="${'Enter last name'}"
+                   type="text"
+            >
+            <div class="invalid_feedback" th:errors="*{lastName}" th:if="${#fields.hasErrors('lastName')}"></div>
+        </div>
+
+        <div class="form_group">
+            <label th:class="${dateOfBirth}" th:for="${dateOfBirth}" th:text="${'Date of birth'}"></label>
+            <input th:erroeClass="error_notify" th:field="*{dateOfBirth}"
+                   th:name="${dateOfBirth}"
+                   th:placeholder="${'Enter date of birth (yyyy/mm/dd)'}"
+                   type="text"
+            >
+            <div class="invalid_feedback" th:errors="*{dateOfBirth}" th:if="${#fields.hasErrors('dateOfBirth')}"></div>
+        </div>
+
+        <div class="form_group_radio">
+            <div class="inline_check_container">
+                <input class="inline-check-input" id="check_male"
+                       name="check_male" th:field="*{gender}" type="radio"
+                       value="Male"
+                >
+                <label class="inline-check-label" for="check_male" th:text="Male"></label>
+            </div>
+            <div class="inline_check_container">
+                <input class="inline-check-input" id="check_female"
+                       name="'check_female'" th:field="*{gender}" type="radio"
+                       value="Female"
+                >
+                <label class="inline-check-label" for="check_female" th:text="Female"></label>
+            </div>
+        </div>
+        <div class="form_group">
+            <label th:class="${phoneNum}" th:for="${phoneNum}" th:text="${'Phone number'}"></label>
+            <input th:erroeClass="error_notify" th:field="*{phoneNum}"
+                   th:name="${phoneNum}"
+                   th:placeholder="${'Enter a phone number'}"
+                   type="number"
+            >
+            <div class="invalid_feedback" th:errors="*{phoneNum}" th:if="${#fields.hasErrors('phoneNum')}"></div>
+        </div>
+        <div class="form_group">
+            <label th:class="${email}" th:for="${email}" th:text="${'Email address'}"></label>
+            <input th:erroeClass="error_notify" th:field="*{email}"
+                   th:name="${email}"
+                   th:placeholder="${'Enter a email address'}"
+                   type="email"
+            >
+            <div class="invalid_feedback" th:errors="*{email}" th:if="${#fields.hasErrors('email')}"></div>
+        </div>
+    </div>
+    <button class="btn btn-primary" th:text="${button_text}" type="submit"></button>
+</form>
+<form class="container_address"
+      method="POST"
+      th:action="${action_url}"
+      th:fragment="addressForm(button_text)"
+      th:object="${address}"
+>
+    <div class="user_context">
+        <div class="form_group">
+            <label for="address" th:class="${street}" th:text="${'Street address'}">
+            </label>
+            <input id="address" th:erroeClass="error_notify"
+                   th:field="*{street}"
+                   th:name="${street}"
+                   th:placeholder="${'Enter a street'}"
+                   type="text"
+            >
+            <div class="invalid_feedback" th:errors="*{street}" th:if="${#fields.hasErrors('street')}"></div>
+        </div>
+        <div class="form_group">
+            <label for="city" th:class="${city}" th:text="${'City'}"></label>
+            <input id="city" th:erroeClass="error_notify"
+                   th:field="*{city}"
+                   th:name="${city}"
+                   th:placeholder="${'Enter a city'}"
+                   type="text"
+            >
+            <div class="invalid_feedback" th:errors="*{city}" th:if="${#fields.hasErrors('city')}"></div>
+        </div>
+        <div class="form_group">
+            <label for="state" th:class="${state}" th:text="${'State'}"></label>
+            <input id="state" th:erroeClass="error_notify"
+                   th:field="*{state}"
+                   th:name="${state}"
+                   th:placeholder="${'Enter a state'}"
+                   type="text"
+            >
+            <div class="invalid_feedback" th:errors="*{state}" th:if="${#fields.hasErrors('state')}"></div>
+        </div>
+        <div class="form_group">
+            <label for="zipCode" th:class="${zipCode}" th:text="${'Zipcode'}"></label>
+            <input id="zipCode" th:erroeClass="error_notify"
+                   th:field="*{zipCode}"
+                   th:name="${zipCode}"
+                   th:placeholder="${'Enter the zipcode'}"
+                   type="number"
+            >
+            <div class="invalid_feedback" th:errors="*{zipCode}" th:if="${#fields.hasErrors('zipCode')}"></div>
+        </div>
+    </div>
+    <button class="btn btn-primary" th:text="${button_text}" type="submit"></button>
+</form>
+<form class="container_authenticate"
+      method="POST"
+      th:action="${action_url}"
+      th:fragment="authenticateForm(button_text)"
+      th:object="${authenticate}">
+    <div class="user_context">
+        <div class="form_group" th:if="${authorize == true}">
+            <label class="custom_label" for="userRole">Choose user role:</label>
+            <select id="userRole"
+                    th:field="*{userRole}" th:name="${userRole}">
+                <option value="">--Please choose an option--</option>
+                <option value="Admin">Admin</option>
+                <option value="Staff">Staff</option>
+                <option value="Student">Student</option>
+            </select>
+            <div class="invalid_feedback" th:errors="*{userRole}" th:if="${#fields.hasErrors('userRole')}"></div>
+        </div>
+
+        <div class="form_group" th:unless="${authorize == true}">
+            <label class="custom_label" for="userRole">User Role:</label>
+            <select id="userRole"
+                    th:field="*{userRole}" th:name="${userRole}">
+                <option value="Student">Student</option>
+            </select>
+            <div class="invalid_feedback" th:errors="*{userRole}" th:if="${#fields.hasErrors('userRole')}"></div>
+        </div>
+
+        <div class="form_group">
+            <label for="username" th:class="${username}" th:text="${'User name'}"></label>
+            <input id="username" th:erroeClass="error_notify"
+                   th:field="*{username}"
+                   th:name="${username}"
+                   th:placeholder="${'Enter username'}"
+                   type="text"
+            >
+            <div class="invalid_feedback" th:errors="*{username}" th:if="${#fields.hasErrors('username')}"></div>
+        </div>
+        <div class="form_group">
+            <label for="password" th:class="${password}"
+                   th:text="${prevPassword} ? 'New Password' : 'Password'"></label>
+            <input id="password" th:erroeClass="error_notify"
+                   th:field="*{password}"
+                   th:name="${password}"
+                   th:placeholder="${prevPassword} ? 'Enter new password' : 'Enter password'"
+                   type="password"
+            >
+            <div class="invalid_feedback" th:errors="*{username}" th:if="${#fields.hasErrors('password')}"></div>
+        </div>
+        <div class="form_group">
+            <label for="conform_password" th:class="${conformPassword}"
+                   th:text="${prevPassword} ? 'Conform new password' : 'Conform password'"></label>
+            <input id="conform_password" th:erroeClass="error_notify"
+                   th:field="*{conformPassword}"
+                   th:name="${conformPassword}"
+                   th:placeholder="${prevPassword} ? 'Conform new password' : 'Conform password'"
+                   type="password"
+            >
+            <div class="invalid_feedback" th:errors="*{conformPassword}"
+                 th:if="${#fields.hasErrors('conformPassword')}"></div>
+        </div>
+    </div>
+    <button class="btn btn-primary" th:text="${button_text}" type="submit"></button>
+</form>
+</body>
+</html>

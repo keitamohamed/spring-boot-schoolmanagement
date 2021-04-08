@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Arvo&family=Cabin&family=Corben&family=Lora&family=Open+Sans&family=Parisienne&family=Roboto:ital,wght@0,100;0,300;1,100&display=swap");
+
+@media screen and (min-width: 992px) {
+    .mySlides {
+        display: none;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .mySlides .slideshow_container {
+        width: 100vw;
+        height: 100vh;
+        margin: 0.5em auto 0;
+    }
+}
+
+/*# sourceMappingURL=atmedia.css.map */

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head th:replace=" fragment/fragments :: head(${title})">
+</head>
+<body>
+<header th:replace="fragment/HeaderNFooter :: header"></header>
+<div class="container_fluid">
+    <div class="table_container">
+        <table class="table_custom">
+            <thead>
+            <tr>
+                <th>id#</th>
+                <th>Full Name</th>
+                <th>Phone#</th>
+                <th>Email</th>
+                <th>Date of birth</th>
+                <th>Age</th>
+                <th>Gender</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${#lists.isEmpty(users)}">
+                <td>No users is available to show. Check database for available users</td>
+            </tr>
+            <tr th:each="user : ${users}">
+                <td th:text="${user.userID}"></td>
+                <td th:text="${user.firstName + ' ' + user.lastName}"></td>
+                <td th:text="${user.phoneNum}"></td>
+                <td th:text="${user.email}"></td>
+                <td th:text="${#dates.format(user.dateOfBirth, 'MM-dd-yyyy')}"></td>
+                <td th:text="${user.age}"></td>
+                <td th:text="${user.gender}"></td>
+            </tr>
+            <tr></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<footer th:replace="fragment/HeaderNFooter :: footer"></footer>
+</body>
+</html>

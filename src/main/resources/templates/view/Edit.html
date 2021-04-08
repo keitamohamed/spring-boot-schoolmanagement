@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head th:replace="fragment/fragments :: head('Edit information')">
+</head>
+<body>
+<header th:replace="fragment/HeaderNFooter :: header"></header>
+<div class="container_fluid">
+    <div class="container_exit_context">
+        <div class="context_info_container edit_context" th:if="${user}">
+            <form class="update_information"
+                  method="POST"
+                  th:action="${action_url}"
+                  th:replace="fragment/ReusableForm :: userForm('Update User Information')">
+            </form>
+        </div>
+        <div class="context_address_container edit_context" th:if="${address}">
+            <form class="update_information"
+                  method="POST"
+                  th:action="${action_url}"
+                  th:replace="fragment/ReusableForm :: addressForm('Update Address')"></form>
+        </div>
+        <div class="context_auth_container edit_context" th:if="${authenticate}">
+            <form class="update_information"
+                  method="POST"
+                  th:action="${action_url}"
+                  th:replace="fragment/ReusableForm :: authenticateForm('Update Authenticate')"></form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head th:fragment="head(title)">
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+          integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link th:href="@{/style/index.css}" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/style/atmedia.css}">
+    <link rel="stylesheet" th:href="@{/style/dropdown_select.css}">
+    <link rel="stylesheet" th:href="@{/style/table_design.css}">
+    <link rel="stylesheet" th:href="@{/style/Slider.css}">
+    <link rel="stylesheet" th:href="@{/style/Login.css}">
+    <script type="text/javascript" th:src="@{/js/util.js}"></script>
+    <title th:text="${title}"></title>
+</head>
+<body>
+<header th:fragment="header">
+    <div class="header_container">
+        <div class="container_title">
+            <a href="">Grade High</a>
+        </div>
+    </div>
+</header>
+
+<div th:fragment="actionForm(action, icon, text)" class="management">
+    <form th:action="${action}" class="form_icon_button_container">
+        <div class="icons_container">
+            <i th:class="${icon}"></i>
+        </div>
+        <button class="btn" th:text="${text}"></button>
+    </form>
+</div>
+
+<footer th:fragment="footer" class="footer">
+    <div class="container_fluid">
+        <div class="footer_container">
+            <div class="footer_context_row">
+                <div class="context">
+                    <a href="">School Management</a>
+                </div>
+                <div class="context contact">
+                    <h3>Contact</h3>
+                    <p>
+                        <i class="fas fa-map-marker-alt"></i>
+                        Address: 1623 King Hill Dr Charlotte, NC
+                    </p>
+                    <p>
+                        <i class="fas fa-phone"></i>
+                        Phone: (540)-666-0011
+                    </p>
+                    <p>
+                        <i class="fas fa-envelope-square"></i>
+                        Email: keitamohamed12@gmail.com
+                    </p>
+                </div>
+                <div class="context social_media">
+                    <h3>Follow US</h3>
+                    <p>
+                        <a href=""><i class="fab fa-instagram"></i></a>
+                        <a href=""><i class="fab fa-facebook-square"></i></a>
+                        <a href=""><i class="fab fa-twitter"></i></a>
+                        <a href=""><i class="fab fa-google-plus-g"></i></a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer_context_copyright">
+                <p>@ Java Full Stack Developer by
+                    <a href="">M.Keita</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

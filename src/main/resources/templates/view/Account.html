@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head th:replace="fragment/fragments :: head('Account')">
+</head>
+<body>
+<header th:replace="fragment/HeaderNFooter :: header"></header>
+<div class="container_fluid">
+    <div class="account_context_container">
+        <div class="container_flex">
+            <div class="account_context_left">
+                <div class="image_container">
+                    <div class="account_context_left_top add_border"
+                         th:object="${user}">
+                        <img alt=""
+                             src="../static/image/gender/avatar_male.png"
+                             th:if="${user.get().gender == 'Male'}" th:src="@{../image/gender/avatar_male.png}">
+                        <img alt=""
+                             src="../static/image/gender/avatar_female.png"
+                             th:src="@{../image/gender/avatar_female.png}" th:unless="${user.get().gender == 'Male'}">
+                        <div class="account_context_left_top"
+                             th:object="${address}"
+                        >
+                            <div class="form_group">
+                                <h5 class="" th:text="${user.get().firstName + ' ' + user.get().lastName}"></h5>
+                                <span th:text="${address.get().street + ', ' + address.get().city + ' ' + address.get().state}"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="social_media_container">
+                    <div class="account_context_left_bottom">
+                        <i class="fab fa-twitter twitter_fa"></i>
+                        <i class="fab fa-instagram-square instagram_fa"></i>
+                        <i class="fab fa-facebook-square facebook_fa"></i>
+                        <i class="fab fa-snapchat-square snapchat_fa"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="account_context_right">
+                <div class="account_context_top">
+                    <form class="context_user_info user_account_context"
+                          method="GET"
+                          th:action="@{/user_update_form}"
+                          th:object="${user}">
+                        <div class="form_group">
+                            <h5 class="">Full Name</h5>
+                            <span th:text="${user.get().firstName + ' ' + user.get().lastName}"></span>
+                        </div>
+                        <div class="form_group">
+                            <h5 class="">Email</h5>
+                            <span th:text="${user.get().email}"></span>
+                        </div>
+                        <div class="form_group">
+                            <h5 class="">Phone</h5>
+                            <span th:text="${user.get().phoneNum}"></span>
+                        </div>
+                        <div class="form_group">
+                            <h5 class="">Date Of Birth</h5>
+                            <span th:text="${#dates.format(user.get().dateOfBirth, 'MM-dd-yyyy')}"></span>
+                        </div>
+                        <div class="form_group">
+                            <h5 class="">Age</h5>
+                            <span th:text="${user.get().age}"></span>
+                        </div>
+                        <button class="btn_edit">Edit My Info</button>
+                    </form>
+                </div>
+                <div class="account_context_bottom">
+                    <form class="context_user_address user_account_context"
+                          th:action="@{/address_update_form}"
+                          th:object="${address}">
+                        <div class="form_group">
+                            <h5 class="">Address</h5>
+                            <span th:text="${address.get().street}"></span>
+                        </div>
+                        <div class="form_group">
+                            <h5 class="">City</h5>
+                            <span th:text="${address.get().city}"></span>
+                        </div>
+                        <div class="form_group">
+                            <h5 class="">State</h5>
+                            <span th:text="${address.get().state}"></span>
+                        </div>
+                        <div class="form_group">
+                            <h5 class="">Zipcode</h5>
+                            <span th:text="${address.get().zipCode}"></span>
+                        </div>
+                        <button class="btn_edit">Edit My Address</button>
+
+                    </form>
+                    <form class="context_user_auth user_account_context"
+                          th:action="@{authenticate_update_form}"
+                          th:object="${authenticate}">
+                        <div class="form_group">
+                            <h5 class="">Username</h5>
+                            <span th:text="${authenticate.get().username}"></span>
+                        </div>
+                        <div class="form_group">
+                            <h5 class="">User Role</h5>
+                            <span th:text="${authenticate.get().userRole}"></span>
+                        </div>
+                        <div class="form_group">
+                            <h5 class="">User Password</h5>
+                            <span th:text="${authenticate.get().password}"></span>
+                        </div>
+                        <button class="btn_edit">Edit My Authenticate</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

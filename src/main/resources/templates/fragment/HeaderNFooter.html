@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<body>
+<header th:fragment="header">
+    <div class="container_fluid">
+        <div class="header_container">
+            <div class="header_flex">
+                <div class="left_container">
+                    <div class="logo_container">
+                        <a class="logo" th:href="@{/}">
+                            <img alt="" src="../../static/image/Logo_.png" th:src="@{../../image/Logo_.png}">
+                        </a>
+                    </div>
+                </div>
+                <div class="right_container">
+                    <ul>
+                        <li th:class="'login_context ' + ${class_name}" th:if="${class_name}">
+                            <ul>
+                                <li class="custom_dropdown" th:if="${admin_or_staff} == true">
+                                    <a href="">Admin</a>
+                                    <ul class="dropdown_context">
+                                        <li>
+                                            <a th:href="@{/user_registration}">Register user</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Update user</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Show users</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Report</a></li>
+                                <li>
+                                    <a th:href="@{/account}">Account</a>
+                                </li>
+                                <li><a href=""></a></li>
+                            </ul>
+                        </li>
+                        <li th:if="${isUserLogin == 'User_Is_Not_Login'}"><a class="add_slash"
+                                                                             th:href="@{/user_registration}">Register</a>
+                        </li>
+                        <li th:if="${isUserLogin == 'User_Is_Login'}"><a th:href="@{/logout}">Logout</a></li>
+                        <li th:unless="${isUserLogin == 'User_Is_Login'}"><a th:href="@{/login}">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<footer class="footer" th:fragment="footer">
+    <div class="container_fluid">
+        <div class="footer_container">
+            <div class="footer_context_row">
+                <div class="context">
+                    <a href="">School Management</a>
+                </div>
+                <div class="context contact">
+                    <h3>Contact</h3>
+                    <p>
+                        <i class="fas fa-map-marker-alt"></i>
+                        Address: 1623 King Hill Dr Charlotte, NC
+                    </p>
+                    <p>
+                        <i class="fas fa-envelope-square"></i>
+                        Email: keitamohamed12@gmail.com
+                    </p>
+                </div>
+                <div class="context social_media">
+                    <h3>Follow US</h3>
+                    <p>
+                        <a href=""><i class="fab fa-instagram"></i></a>
+                        <a href=""><i class="fab fa-facebook-square"></i></a>
+                        <a href=""><i class="fab fa-twitter"></i></a>
+                        <a href=""><i class="fab fa-google-plus-g"></i></a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer_context_copyright">
+                <p>@ Java Full Stack Developer by
+                    <a href="">M.Keita</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

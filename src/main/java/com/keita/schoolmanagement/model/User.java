@@ -5,22 +5,19 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 
 @Entity
 @Table(name = "User")
-public class User {
+public class User implements Serializable {
 
     @Id
     @Column(name = "userID", unique = true, nullable = false)
     private Long userID;
 
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "user")
-    private Authenticate auth;
-
     @NotBlank(message = "Enter a valid first name")
-    @Column(name = "firstName", nullable = false)
     private String firstName;
     @NotBlank(message = "Enter a valid last name")
     private String lastName;
@@ -32,13 +29,34 @@ public class User {
     private int age;
     @NotBlank(message = "Enter a valid phone number")
     private String phoneNum;
-
+    @NotBlank(message = "Enter a valid email")
+    @Column(unique = true)
     private String email;
 
+    @OneToOne(mappedBy = "user")
+    private Authenticate auth;
 
     @OneToMany(mappedBy = "user")
     private Set<Address> addresses;
 
+    public User() {
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userID=" + userID +
+                ", auth=" + auth +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", gender='" + gender + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", age=" + age +
+                ", phoneNum='" + phoneNum + '\'' +
+                ", email='" + email + '\'' +
+                ", addresses=" + addresses +
+                '}';
+    }
 
     public Long getUserID() {
         return userID;

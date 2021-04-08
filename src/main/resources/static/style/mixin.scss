@@ -1,0 +1,62 @@
+@import "variable";
+
+@mixin responsive-below($breakpoint) {
+
+  // If the breakpoint exists in the map.
+  @if map_has_key($breakpoints, $breakpoint) {
+
+    // Get the breakpoint value.
+    $breakpoint-value: map_get($breakpoints, $breakpoint);
+    @media screen and (max-width: $breakpoint-value) {
+      @content
+    }
+
+    // If the breakpoint doesn't exist in the map.
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.'
+  }
+}
+
+@mixin responsive-min($breakpoint) {
+  // If the breakpoint exists in the map.
+  @if map_has_key($breakpoints, $breakpoint) {
+    // Get the breakpoint value.
+    $breakpoint-value: map_get($breakpoints, $breakpoint);
+    @media screen and (min-width: $breakpoint-value) {
+      @content
+    }
+    // If the breakpoint doesn't exist in the map.
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.'
+  }
+
+}
+
+@mixin responsive-between($lower, $upper) {
+
+  @if map_has_key($breakpoints, $lower) and
+  map_has_key($breakpoints, $upper) {
+
+    // Get the lower and upper breakpoints.
+    $lower-breakpoint: map_get($breakpoints, $lower);
+    $upper-breakpoint: map_get($breakpoints, $upper);
+
+    // Write the media query.
+    @media (min-width: $lower-breakpoint) and(max-width: $upper-breakpoint) {
+      @content
+    }
+
+    // If one or both of the breakpoints don't exist.
+  } @else {
+    // If lower breakpoint is invalid.
+    @if (map_has_key($breakpoints, $lower) == false) {
+      // Log a warning.
+      @warn 'Your lower breakepoint was invalid: #{$lower}'
+    }
+    // If upper breakpoint is invalid.
+    @if (map_has_key($breakpoints, $upper) == false) {
+      // Log a warning.
+      @warn 'Your upper breakpoint was invalid: #{$upper}.';
+    }
+  }
+}
