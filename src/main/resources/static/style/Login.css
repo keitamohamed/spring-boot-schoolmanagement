@@ -1,5 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Arvo&family=Cabin&family=Corben&family=Crimson+Text&family=Lora&family=Open+Sans&family=Parisienne&family=Roboto:ital,wght@0,100;0,300;1,100&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: "Roboto", "Cabin", "Corben", "Lora", "Arvo", "Open Sans", "Parisienne", cursive, sans-serif !important;
+}
+
 .container.login_container {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../image/Login___bg.jpg") no-repeat center !important;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../image/auth/login_bg.jpg") no-repeat center !important;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -15,8 +25,13 @@
     overflow: hidden;
 }
 .container .auth_container {
-    margin: 8em auto 2em;
     width: 100%;
+    margin: 0 auto;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.1s ease;
 }
 .container .auth_container .auth_form {
     width: 50%;
@@ -68,9 +83,11 @@
     color: #FFF !important;
 }
 .container .auth_container .auth_form .login .btn_container {
+    width: 100%;
     display: flex;
     padding: 10px 0 10px 6em;
     gap: 2em;
+    margin: 0 auto;
 }
 .container .auth_container .auth_form .login .btn_container .submit-btn {
     width: 40%;
@@ -82,10 +99,17 @@
     border-radius: 20px;
     background: transparent;
 }
+
 .container .auth_container .auth_form .login .btn_container .un_order_list {
     display: flex;
     gap: 1em;
 }
+
+.container .auth_container .auth_form .login .btn_container .un_order_list * {
+    font-size: 1em;
+    font-family: "Crimson Text", cursive, sans-serif !important;
+}
+
 .container .auth_container .auth_form .login .btn_container .un_order_list li {
     list-style: none;
     padding-top: 10px;

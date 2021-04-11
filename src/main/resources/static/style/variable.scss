@@ -1,19 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Cabin&family=Corben&family=Lora&family=Open+Sans&family=Parisienne&family=Roboto:ital,wght@0,100;0,300;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Cabin&family=Corben&family=Crimson+Text&family=Lora&family=Open+Sans&family=Parisienne&family=Roboto:ital,wght@0,100;0,300;1,100&display=swap');
 
 $breakpoints: (
         xs: 575px,
         sm: 767px,
-        md: 992px,
+        md: 900px,
         lg: 1200px
 );
 
 $color_red: #bb2205;
-$font_family: 'Roboto', 'Cabin', 'Corben', 'Lora',
-'Arvo', 'Open Sans', 'Parisienne',
+$font_family: 'Roboto', 'Cabin', 'Corben', 'Lora', 'Arvo', 'Open Sans', 'Parisienne',
 cursive, sans-serif;
 $font_family_second: 'Lora', 'Arvo', 'Open Sans', 'Parisienne', cursive, sans-serif;
+$font_family_third: 'Parisienne', cursive, sans-serif;
+$font_family_fourth: 'Crimson Text', cursive, sans-serif;
 
 $font_awesome: 'Font Awesome 5 Brands';
 
 $box_shadow: 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
-$dropdown_box_shadow: 1px 2px 0 rgba(0, 0, 0, .1), 0 1px 1px 0 rgba(0, 0, 0, .06)
+$dropdown_box_shadow: 1px 2px 0 rgba(0, 0, 0, .1), 0 1px 1px 0 rgba(0, 0, 0, .06);
+
+$transition: all 0.1s ease;

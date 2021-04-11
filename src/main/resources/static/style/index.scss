@@ -458,10 +458,46 @@ label {
       }
     }
   }
-}
 
+  .admin_search_user {
+    width: 80%;
+    margin: 0 auto;
 
-.form_register {
+    .form_search_user {
+      width: 60%;
+      padding: 0 20px;
+      margin: 0 auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      input[type=text] {
+        float: left;
+        width: 80%;
+        padding: 11px;
+        border: 1px solid $color_red;
+        outline: none;
+        box-shadow: none;
+      }
+
+      button {
+        float: left;
+        width: 20%;
+        padding: .5em 10px;
+        border: 1px solid $color_red;
+        border-left: none;
+        background: $color_red;
+        color: white !important;
+      }
+
+      &::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+    }
+  }
 }
 
 .user_info_container {

@@ -8,12 +8,13 @@
                 <div class="left_container">
                     <div class="logo_container">
                         <a class="logo" th:href="@{/}">
-                            <img alt="" src="../../static/image/Logo_.png" th:src="@{../../image/Logo_.png}">
+                            <img alt="" src="../../static/image/logo/Logo_.png" th:src="@{../../image/logo/Logo_.png}">
                         </a>
                     </div>
                 </div>
                 <div class="right_container">
                     <ul>
+                        <li><i class="fas fa-user-tie"></i></li>
                         <li th:class="'login_context ' + ${class_name}" th:if="${class_name}">
                             <ul>
                                 <li class="custom_dropdown" th:if="${admin_or_staff} == true">
@@ -23,14 +24,13 @@
                                             <a th:href="@{/user_registration}">Register user</a>
                                         </li>
                                         <li>
-                                            <a href="">Update user</a>
+                                            <a th:href="@{/admin_edit_user}">Update user</a>
                                         </li>
                                         <li>
                                             <a href="">Show users</a>
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="">Report</a></li>
                                 <li>
                                     <a th:href="@{/account}">Account</a>
                                 </li>

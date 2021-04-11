@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Arvo&family=Cabin&family=Corben&family=Crimson+Text&family=Lora&family=Open+Sans&family=Parisienne&family=Roboto:ital,wght@0,100;0,300;1,100&display=swap");
+
+@media screen and (max-width: 575px) {
+    .container_fluid .auth_container .auth_form .login .btn_container {
+        padding-left: 0 !important;
+        flex-direction: column;
+    }
+
+    .container_fluid .auth_container .auth_form .login .btn_container .submit-btn {
+        flex: 1 1 100% !important;
+        width: 70%;
+        padding: 5px 5px !important;
+        margin: 0 auto;
+    }
+
+    .container_fluid .auth_container .auth_form .login .btn_container .un_order_list {
+        margin-top: -1.5em;
+        flex: 1 1 100% !important;
+        text-align: center;
+        place-content: center;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .container_fluid .header_flex {
+        gap: 0.2em;
+    }
+
+    .container_fluid .header_flex .left_container {
+        order: 1;
+        flex: 0 0 10% !important;
+        padding-left: 0.5em !important;
+        margin-top: 0.5em !important;
+    }
+
+    .container_fluid .header_flex .left_container .logo_container {
+        width: 80px !important;
+        height: 80px !important;
+    }
+
+    .container_fluid .header_flex .left_container .logo_container .logo {
+        width: 80px;
+    }
+
+    .container_fluid .header_flex .right_container {
+        order: 1;
+        flex: 1 1 90% !important;
+        padding-top: 1.5em !important;
+        padding-right: 1.5em;
+    }
+
+    .container_fluid .header_flex .right_container ul {
+        place-content: flex-end !important;
+    }
+
+    .container_fluid .auth_container .auth_form {
+        width: 90%;
+    }
+
+    .container_fluid .auth_container .auth_form .login .form-holder input {
+        border-radius: 5px;
+    }
+
+    .container_fluid .auth_container .auth_form .login .form-title {
+        font-family: "Parisienne", cursive, sans-serif !important;
+        font-size: 1.5em;
+        margin-bottom: 1em;
+    }
+
+    .container_fluid .auth_container .auth_form .login .btn_container {
+        padding-left: 2em;
+    }
+
+    .container_fluid .auth_container .auth_form .login .btn_container .submit-btn {
+        padding: 5px 10px;
+    }
+
+    .container_fluid .auth_container .auth_form .login .btn_container .un_order_list * {
+        font-family: "Crimson Text", cursive, sans-serif !important;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .container_fluid .container_flex {
+        flex-direction: column;
+    }
+
+    .container_fluid .container_flex .account_context_left {
+        order: 1;
+        flex: 1 1 90% !important;
+        display: flex;
+        gap: 1em !important;
+        transition: all 0.1s ease;
+    }
+
+    .container_fluid .container_flex .account_context_left .social_media_container {
+        margin-left: -5em !important;
+        padding-left: 0 !important;
+        transform: rotate(-90deg) rotateX(180deg) scale(1);
+    }
+
+    .container_fluid .container_flex .account_context_right {
+        order: 1;
+        flex: 1 1 100% !important;
+    }
+
+    .container_fluid .container_flex .account_context_right .account_context_bottom {
+        flex-direction: column;
+    }
+
+    .container_fluid .user_registration_form_context .container_user .user_context, .container_fluid .user_registration_form_context .container_address .user_context, .container_fluid .user_registration_form_context .container_authenticate .user_context {
+        width: 70%;
+    }
+
+    .container_fluid .user_registration_form_context .container_user .btn, .container_fluid .user_registration_form_context .container_address .btn, .container_fluid .user_registration_form_context .container_authenticate .btn {
+        width: 70%;
+    }
+
+    .container_fluid .sub_container .form_search_user {
+        width: 100%;
+        transition: all 0.1s ease;
+    }
+
+    .container_fluid .sub_container .form_search_user .form_group {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .container_fluid .auth_container .auth_form {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .mySlides {
+        display: none;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .mySlides .slideshow_container {
+        width: 100vw;
+        height: 100vh;
+        margin: 0.5em auto 0;
+    }
+}
+
+/*# sourceMappingURL=media_screen.css.map */

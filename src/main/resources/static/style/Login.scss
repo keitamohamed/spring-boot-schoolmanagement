@@ -1,5 +1,16 @@
+@import "variable";
+
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+  text-align: center;
+  font-family: $font_family !important;
+}
+
 .container.login_container {
-  background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("../image/Login___bg.jpg") no-repeat center !important;
+  background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("../image/auth/login_bg.jpg") no-repeat center !important;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -15,8 +26,13 @@
   overflow: hidden;
 
   .auth_container {
-    margin: 8em auto 2em;
     width: 100%;
+    margin: 0 auto;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: $transition;
 
     .auth_form {
       width: 50%;
@@ -69,9 +85,11 @@
         }
 
         .btn_container {
+          width: 100%;
           display: flex;
           padding: 10px 0 10px 6em;
           gap: 2em;
+          margin: 0 auto;
 
           .submit-btn {
             width: 40%;
@@ -88,6 +106,11 @@
           .un_order_list {
             display: flex;
             gap: 1em;
+
+            * {
+              font-size: 1em;
+              font-family: $font-family_fourth !important;
+            }
 
             li {
               list-style: none;

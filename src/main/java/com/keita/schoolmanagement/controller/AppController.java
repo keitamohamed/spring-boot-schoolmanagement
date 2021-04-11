@@ -6,7 +6,7 @@ import com.keita.schoolmanagement.model.User;
 import com.keita.schoolmanagement.service.AddressService;
 import com.keita.schoolmanagement.service.AuthenticateService;
 import com.keita.schoolmanagement.service.UserService;
-import com.keita.schoolmanagement.util.SetLoginItem;
+import com.keita.schoolmanagement.util.LoginItem;
 import com.keita.schoolmanagement.util.UtilService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -38,20 +38,20 @@ public class AppController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(@ModelAttribute Authenticate authenticate, Model model) {
         model.addAttribute("authenticate", authenticate);
-        SetLoginItem.showHeaderNav(model, loginUser);
+        LoginItem.showHeaderNav(model, loginUser);
         return "index";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String getLoginForm(@ModelAttribute Authenticate authenticate, Model model) {
         model.addAttribute("authenticate", authenticate);
-        SetLoginItem.showHeaderNav(model, loginUser);
+        LoginItem.showHeaderNav(model, loginUser);
         return "Login";
     }
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public String getLogoutForm(Model model) {
-        loginUser = SetLoginItem.signOut(model, new User(), loginUser, null, new Address());
+        loginUser = LoginItem.signOut(model, new User(), loginUser, null, new Address());
         return "redirect:/";
     }
 
@@ -60,7 +60,7 @@ public class AppController {
         user.setUserID((long) utilService.generateRandomNumber());
         model.addAttribute("user", user);
         model.addAttribute("action_url", "process_user_registration_form");
-        SetLoginItem.showHeaderNav(model, loginUser);
+        LoginItem.showHeaderNav(model, loginUser);
         return "RegisterForm";
     }
 
@@ -68,76 +68,81 @@ public class AppController {
     public String getUserAForm(@ModelAttribute Address address, Model model) {
         model.addAttribute("address", address);
         model.addAttribute("action_url", "process_address_form");
-        SetLoginItem.showHeaderNav(model, loginUser);
-        return SetLoginItem.isUserLogin(userID, "/RegisterForm");
+        LoginItem.showHeaderNav(model, loginUser);
+        return LoginItem.isUserLogin(userID, "/RegisterForm");
     }
 
     @RequestMapping(value = "/authenticate_form", method = RequestMethod.GET)
     public String getAuthenticateForm(@ModelAttribute Authenticate authenticate, Model model) {
         model.addAttribute("authenticate", authenticate);
         model.addAttribute("action_url", "process_authentication_form");
-        SetLoginItem.showHeaderNav(model, loginUser);
-        return SetLoginItem.isUserLogin(userID, "/RegisterForm");
+        LoginItem.showHeaderNav(model, loginUser);
+        return LoginItem.isUserLogin(userID, "/RegisterForm");
     }
 
     @RequestMapping(value = "/account", method = RequestMethod.GET)
     public String account(@ModelAttribute Optional<User> user, @ModelAttribute Optional<Address> address,
                           @ModelAttribute Authenticate authenticate, Model model) {
         if (loginUser == null) {
-            return SetLoginItem.index(loginUser, "view/Account");
+            return LoginItem.index(loginUser, "view/Account");
         }
         userID = userService.getID(authService.findIdByID(loginUser.getAuthID()));
-        model.addAttribute("user", userService.getUser(userID));
-        model.addAttribute("address", addressService.getUserAddress(userID));
-        model.addAttribute("authenticate", authService.getUserAuth(userID));
-        SetLoginItem.showHeaderNav(model, loginUser);
-        return SetLoginItem.isUserLogin(loginUser, "view/Account");
+        LoginItem.setUserAccount(userID, userService, addressService, authService, model);
+        LoginItem.showHeaderNav(model, loginUser);
+        return LoginItem.isUserLogin(loginUser, "view/Account");
     }
 
     @RequestMapping(value = "/view_list", method = RequestMethod.GET)
     public String getViewList(@ModelAttribute User user, Model model) {
         if (loginUser == null) {
-            return SetLoginItem.index(loginUser, "view/Account");
+            return LoginItem.index(loginUser, "view/Account");
         }
         UtilService.setTitle(model, "Student List");
         model.addAttribute("users", userService.getUsers());
-        SetLoginItem.showHeaderNav(model, loginUser);
-        return SetLoginItem.isUserLogin(loginUser, "view/View");
+        LoginItem.showHeaderNav(model, loginUser);
+        return LoginItem.isUserLogin(loginUser, "view/View");
     }
 
     @RequestMapping(value = "/user_update_form", method = RequestMethod.GET)
     public String getUserUpdateForm(@ModelAttribute Optional<User> user, Model model) {
         if (loginUser == null || userService.getUser(userID).isEmpty()) {
-            return SetLoginItem.index(loginUser, "view/Account");
+            return LoginItem.index(loginUser, "view/Account");
         }
         model.addAttribute("user", userService.getUser(userID));
         model.addAttribute("action_url", "process_user_update_form");
-        SetLoginItem.showHeaderNav(model, loginUser);
-        return SetLoginItem.isUserLogin(loginUser, "view/Edit");
+        LoginItem.showHeaderNav(model, loginUser);
+        return LoginItem.isUserLogin(loginUser, "view/Edit");
     }
 
     @RequestMapping(value = "/address_update_form", method = RequestMethod.GET)
     public String getEditAddressForm(@ModelAttribute Optional<Address> address, Model model) {
         if (loginUser == null || addressService.getUserAddress(userID).isEmpty()) {
-            return SetLoginItem.index(loginUser, "view/Account");
+            return LoginItem.index(loginUser, "view/Account");
         }
         model.addAttribute("address", addressService.getUserAddress(userID));
         model.addAttribute("action_url", "process_address_update_form");
-        SetLoginItem.showHeaderNav(model, loginUser);
-        return SetLoginItem.isUserLogin(loginUser, "view/Edit");
+        LoginItem.showHeaderNav(model, loginUser);
+        return LoginItem.isUserLogin(loginUser, "view/Edit");
     }
 
     @RequestMapping(value = "/authenticate_update_form", method = RequestMethod.GET)
     public String getAuthenticateUpdateForm(@ModelAttribute Optional<Authenticate> authenticate, Model model) {
         if (loginUser == null || authService.getUserAuth(userID).isEmpty()) {
-            return SetLoginItem.index(loginUser, "view/Account");
+            return LoginItem.index(loginUser, "view/Account");
         }
         model.addAttribute("authenticate", authService.getUserAuth(userID));
         model.addAttribute("prevPassword", true);
-        model.addAttribute("authorize", SetLoginItem.authorize(loginUser));
+        model.addAttribute("authorize", LoginItem.authorize(loginUser));
         model.addAttribute("action_url", "process_authenticate_update_form");
-        SetLoginItem.showHeaderNav(model, loginUser);
-        return SetLoginItem.isUserLogin(loginUser, "view/Edit");
+        LoginItem.showHeaderNav(model, loginUser);
+        return LoginItem.isUserLogin(loginUser, "view/Edit");
+    }
+
+    @RequestMapping(value = "/admin_edit_user", method = RequestMethod.GET)
+    public String getStaffUpdateUserForm(@ModelAttribute User user, Model model) {
+        model.addAttribute("user", user);
+        LoginItem.showHeaderNav(model, loginUser);
+        return LoginItem.isUserLogin(loginUser, "view/StaffUpdateUser");
     }
 
 
@@ -168,7 +173,7 @@ public class AppController {
         }
         user.setAge(utilService.calculateUserAge(user.getDateOfBirth()));
         userID = (userService.save(user).getUserID());
-        return SetLoginItem.redirectPath(loginUser, "redirect:/address_form", "redirect:/user_registration");
+        return LoginItem.redirectPath(loginUser, "redirect:/address_form", "redirect:/user_registration");
     }
 
     @RequestMapping(value = "/process_address_form", method = RequestMethod.POST)
@@ -180,7 +185,7 @@ public class AppController {
         if (inserted == null) {
             return "RegisterForm";
         }
-        return SetLoginItem.redirectPath(loginUser, "redirect:/authenticate_form", "redirect:/address");
+        return LoginItem.redirectPath(loginUser, "redirect:/authenticate_form", "redirect:/address");
     }
 
     @RequestMapping(value = "/process_authentication_form", method = RequestMethod.POST)
@@ -189,7 +194,7 @@ public class AppController {
             return "RegisterForm";
         }
         authService.save(authenticate, userID);
-        return SetLoginItem.redirectPath(loginUser, "login", "redirect:/authenticate_form");
+        return LoginItem.redirectPath(loginUser, "login", "redirect:/authenticate_form");
     }
 
     @RequestMapping(value = "/process_user_update_form", method = RequestMethod.POST)
@@ -208,6 +213,17 @@ public class AppController {
     public String updateAuthenticate(@ModelAttribute Authenticate authenticate, Model model,
                                      BindingResult result) {
         return EditController.updateAuthenticate(loginUser, authenticate, authService, result, model);
+    }
+
+    @RequestMapping(value = "/admin_process_edit_user", method = RequestMethod.POST)
+    public String postStaffUpdateUserForm(@ModelAttribute User user, Model model) {
+        if (loginUser == null) {
+            return LoginItem.index(loginUser, "view/Account");
+        }
+        userID = userService.getID(authService.findIdByID(loginUser.getAuthID()));
+        LoginItem.setUserAccount(user.getUserID(), userService, addressService, authService, model);
+        LoginItem.showHeaderNav(model, loginUser);
+        return "view/Account";
     }
 
 }

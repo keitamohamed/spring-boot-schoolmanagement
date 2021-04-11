@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head th:replace="fragment/fragments :: head('update user')" th:title="User update">
+<body>
+<header th:replace="fragment/HeaderNFooter :: header"></header>
+<div class="container_fluid">
+    <div class="sub_container admin_search_user">
+        <form class="form_search_user"
+              method="POST"
+              th:action="@{/admin_process_edit_user}"
+              th:object="${user}">
+            <div class="form_group ">
+                <input th:erroeClass="error_notify" th:field="*{userID}"
+                       th:name="${user.userID}"
+                       th:placeholder="${'Enter user id'}"
+                       type="text"
+                >
+                <button class="search_user" type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

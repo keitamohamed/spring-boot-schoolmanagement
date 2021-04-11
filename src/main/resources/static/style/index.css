@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Arvo&family=Cabin&family=Corben&family=Lora&family=Open+Sans&family=Parisienne&family=Roboto:ital,wght@0,100;0,300;1,100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arvo&family=Cabin&family=Corben&family=Crimson+Text&family=Lora&family=Open+Sans&family=Parisienne&family=Roboto:ital,wght@0,100;0,300;1,100&display=swap");
 * {
     margin: 0;
     padding: 0;
@@ -366,11 +366,53 @@ label {
     margin-top: 2em;
     gap: 1em;
 }
+
 .container_fluid .account_context_container .container_flex .account_context_bottom .user_account_context {
     flex: 1 1 0;
 }
+
 .container_fluid .account_context_container .container_flex .account_context_bottom .context_user_address {
     flex: 2 1 0;
+}
+
+.container_fluid .admin_search_user {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.container_fluid .admin_search_user .form_search_user {
+    width: 60%;
+    padding: 0 20px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container_fluid .admin_search_user .form_search_user input[type=text] {
+    float: left;
+    width: 80%;
+    padding: 11px;
+    border: 1px solid #bb2205;
+    outline: none;
+    box-shadow: none;
+}
+
+.container_fluid .admin_search_user .form_search_user button {
+    float: left;
+    width: 20%;
+    padding: 0.5em 10px;
+    border: 1px solid #bb2205;
+    border-left: none;
+    background: #bb2205;
+    color: white !important;
+}
+
+.container_fluid .admin_search_user .form_search_user::after {
+    content: "";
+    clear: both;
+    display: table;
 }
 
 .user_info_container {
@@ -378,6 +420,7 @@ label {
     gap: 10px 20px;
     margin-top: 3em;
 }
+
 .user_info_container .flex_grow, .user_info_container .user_login_info {
     flex-grow: 1;
     padding: 0 3em;

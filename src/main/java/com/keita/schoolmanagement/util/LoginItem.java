@@ -3,13 +3,16 @@ package com.keita.schoolmanagement.util;
 import com.keita.schoolmanagement.model.Address;
 import com.keita.schoolmanagement.model.Authenticate;
 import com.keita.schoolmanagement.model.User;
+import com.keita.schoolmanagement.service.AddressService;
+import com.keita.schoolmanagement.service.AuthenticateService;
+import com.keita.schoolmanagement.service.UserService;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import java.util.List;
 
 @Service
-public class SetLoginItem {
+public class LoginItem {
 
     public static <T> String isUserLogin(T t, String path) {
         if (t != null) {
@@ -41,6 +44,19 @@ public class SetLoginItem {
             return "//index";
         }
         return "index";
+    }
+
+    public static <T> void setUserAccount(T userId, UserService userService, AddressService addressService,
+                                          AuthenticateService authService, Model model) {
+        System.out.println("user id is " + userId);
+        model.addAttribute("user", userService.getUser(convertToLong(userId)));
+        model.addAttribute("address", addressService.getUserAddress(convertToLong(userId)));
+        model.addAttribute("authenticate", authService.getUserAuth(convertToLong(userId)));
+    }
+
+    private static <T> Long convertToLong(T t) {
+        String userID = String.valueOf(t);
+        return Long.parseLong(userID);
     }
 
     private static String firstFourChars(String path) {
